@@ -1,8 +1,8 @@
 package DriverPackage;
 
 import AirplanePackage.Airplane;
-import AgriculturalDrone_MAVPackage.AgriculturalDrone;
-import AgriculturalDrone_MAVPackage.MAV;
+import ACD_MAVPackage.ACD;
+import ACD_MAVPackage.MAV;
 import Helicopter_QuadcopterPackage.Helicopter;
 import Helicopter_QuadcopterPackage.Quadcopter;
 import MultirotorPackage.Multirotor;
@@ -30,11 +30,11 @@ public class Driver {
 		array1[7] = new Multirotor();
 		array1[8] = new Multirotor();
 
-		array1[9] = new UAV();
-		array1[10] = new UAV();
+//		array1[9] = new UAV();
+//		array1[10] = new UAV();
 
-		array1[11] = new AgriculturalDrone();
-		array1[12] = new AgriculturalDrone();
+		array1[11] = new ACD();
+		array1[12] = new ACD();
 
 		array1[13] = new MAV();
 		array1[14] = new MAV();
@@ -59,7 +59,47 @@ public class Driver {
 	}
 
 	public static void findLeastAndMostExpensiveUAV(Object[] array) {
+//		boolean continueMethod = false;
+		int count = 0, indexMax = 0, indexMin = 0;
 
+		// Checking if any of the objects in the given array are of class UAV,
+		// If so, the count is increased
+		for (int i = 0; i < array.length; i++) {
+			if (UAV.class == array[i].getClass()) {
+				count++;
+			}
+		}
+
+		if (count != 0) {
+
+			UAV[] UAVs = new UAV[count];
+
+			for (int i = 0, j = 0; i < array.length; i++) {
+				if (UAV.class == array[i].getClass()) {
+					UAVs[j] = (UAV) array[i];
+					j++;
+				}
+			}
+
+			for (int i = 0; i < (UAVs.length - 1); i++) {
+
+				if (UAVs[i].getPrice() >= UAVs[i + 1].getPrice()) {
+					indexMax = i;
+				} else {
+					indexMax = i + 1;
+				}
+				if (UAVs[i].getPrice() <= UAVs[i + 1].getPrice()) {
+					indexMin = i;
+				} else {
+					indexMin = i + 1;
+				}
+
+			}
+			System.out.println("The most expensive UAV is: " + UAVs[indexMax]);
+			System.out.println("The least expensive UAV is: " + UAVs[indexMin]);
+		} else {
+			System.out.println("No UAVs present in given array.");
+			return;
+		}
 	}
-
 }
