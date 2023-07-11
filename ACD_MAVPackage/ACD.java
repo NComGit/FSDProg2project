@@ -48,7 +48,15 @@ public class ACD extends UAV { // (which is used for crop production) is UAV tha
 	}
 
 	@Override
-	public boolean equals(ACD check) {
+	public boolean equals(Object obj) {
+		if (obj == null) {
+			return false;
+		} else if (obj.getClass() != getClass()) {
+			return false;
+		}
+		
+		ACD check = (ACD) obj;
+		
 		if (this.brand == check.brand && this.carryCap == check.carryCap && getWeight() == check.getWeight() && getPrice() == check.getPrice()) {
 			return true;
 		}

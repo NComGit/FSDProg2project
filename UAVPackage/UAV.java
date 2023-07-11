@@ -1,9 +1,6 @@
 package UAVPackage;
 
-import ACD_MAVPackage.ACD;
-import ACD_MAVPackage.MAV;
-
-public abstract class UAV { // (Unmanned aerial vehicle / Drone) class has the following attributes: weight (double type), and price (double type).  
+public class UAV { // (Unmanned aerial vehicle / Drone) class has the following attributes: weight (double type), and price (double type).  
 	
 	private double weight;
 	private double price;
@@ -36,15 +33,23 @@ public abstract class UAV { // (Unmanned aerial vehicle / Drone) class has the f
 		this.price = price;
 	}
 	
-	public abstract String toString();
+	public String toString() {
+		return ("This Unmanned aerial vehicle weighs " + weight
+		+ " pounds, and costs " + price + "$.");
+}
 
-	public boolean equals(MAV check) {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	public boolean equals(ACD check) {
-		// TODO Auto-generated method stub
+	public boolean equals(Object obj) {
+		if (obj == null) {
+			return false;
+		} else if (obj.getClass() != getClass()) {
+			return false;
+		}
+		
+		UAV check = (UAV) obj;
+		
+		if (this.weight == check.weight && this.price == check.price) {
+			return true;
+		}
 		return false;
 	}
 	
