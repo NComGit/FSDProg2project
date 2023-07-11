@@ -63,7 +63,8 @@ public class Quadcopter extends Helicopter { // A Quadcopter, is a Helicopter th
 
 		return super.getCreationYear() == other.getCreationYear() && super.getCylinders() == other.getCylinders()
 				&& super.getPassengerCapacity() == other.getPassengerCapacity()
-				&& this.maxFlyingSpeed == other.getMaxFlyingSpeed() && Objects.equals(super.getBrand(), other.getBrand());
+				&& this.maxFlyingSpeed == other.getMaxFlyingSpeed()
+				&& Objects.equals(super.getBrand(), other.getBrand());
 	}
 
 }

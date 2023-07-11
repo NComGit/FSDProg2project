@@ -1,5 +1,7 @@
 package MultirotorPackage;
 
+import java.util.Objects;
+
 import Helicopter_QuadcopterPackage.Helicopter;
 
 public class Multirotor extends Helicopter { // that additionally has the following: number of rotors (int type), which
@@ -14,18 +16,22 @@ public class Multirotor extends Helicopter { // that additionally has the follow
 
 	public Multirotor(String brand, double price, int horsepower, int numCylinders, int yearCreation,
 			int passengerCapacity, int numberOfRotors) {
+		// Parameterized constructor; passes parameters, except numberOfRotors, to
+		// parameterized constructor of Helicopter class
 		super(numCylinders, yearCreation, passengerCapacity, brand, price, horsepower);
 		this.numberOfRotors = numberOfRotors;
 	}
 
-	public Multirotor(Multirotor quad) {
-		super.setBrand(quad.getBrand());
-		super.setPrice(quad.getPrice());
-		super.setHorsePower(quad.getHorsePower());
-		super.setCylinders(quad.getCylinders());
-		super.setCreationYear(quad.getCreationYear());
-		super.setPassengerCapacity(quad.getPassengerCapacity());
-		this.numberOfRotors = quad.numberOfRotors;
+	public Multirotor(Multirotor multi) {
+		// Copy constructor; passes attributes of Multirotor multi(object to be copied)
+		// to superclass of Multirotor object to be created
+		super.setBrand(multi.getBrand());
+		super.setPrice(multi.getPrice());
+		super.setHorsePower(multi.getHorsePower());
+		super.setCylinders(multi.getCylinders());
+		super.setCreationYear(multi.getCreationYear());
+		super.setPassengerCapacity(multi.getPassengerCapacity());
+		this.numberOfRotors = multi.numberOfRotors;
 	}
 
 	public int getNumberOfRotors() {
@@ -44,6 +50,9 @@ public class Multirotor extends Helicopter { // that additionally has the follow
 	}
 
 	public boolean equals(Object obj) {
+		// Compares to objects to see if their attributes are equal. First checks to see
+		// if object has been passed to itself, then if objects are of the same class.
+		// The objects attributes are then compared.
 		if (this == obj)
 			return true;
 		if (!super.equals(obj))
@@ -55,7 +64,8 @@ public class Multirotor extends Helicopter { // that additionally has the follow
 
 		return super.getCreationYear() == other.getCreationYear() && super.getCylinders() == other.getCylinders()
 				&& super.getPassengerCapacity() == other.getPassengerCapacity()
-				&& this.numberOfRotors == other.getNumberOfRotors();
+				&& this.numberOfRotors == other.getNumberOfRotors()
+				&& Objects.equals(super.getBrand(), other.getBrand());
 	}
 
 }
