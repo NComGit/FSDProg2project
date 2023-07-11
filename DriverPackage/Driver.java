@@ -30,13 +30,13 @@ public class Driver {
 		array1[7] = new Multirotor();
 		array1[8] = new Multirotor();
 
-//		array1[9] = new UAV();
-//		array1[10] = new UAV();
+		array1[9] = new UAV(900, 10500);
+		array1[10] = new UAV(850, 6000);
+		array1[11] = new UAV(720, 12000);
 
-		array1[11] = new ACD();
 		array1[12] = new ACD();
+		array1[13] = new ACD();
 
-		array1[13] = new MAV();
 		array1[14] = new MAV();
 
 		// Displaying the info of each object of array1
@@ -50,11 +50,22 @@ public class Driver {
 		System.out.println("Is flying object #4 identical to #6: " + array1[4].equals(array1[6]));
 		System.out.println("Is flying object #4 identical to #5: " + array1[4].equals(array1[5]));
 		System.out.println("Is flying object #4 identical to #1: " + array1[4].equals(array1[1]));
+		System.out.println();
 
 		// Creating objects and placing them into array2
 		for (int i = 0; i < array2.length; i++) {
 			array2[i] = new Airplane("ConAir", 120000, 30000);
 		}
+
+		// Testing findLeastAndMostExpensiveUAV() method with array1 (with UAV)
+		System.out.println("Finding most/least expensive UAV in array1:");
+		findLeastAndMostExpensiveUAV(array1);
+
+		System.out.println();
+
+		// Testing findLeastAndMostExpensiveUAV() method with array2 (without UAV)
+		System.out.println("Finding most/least expensive UAV in array2:");
+		findLeastAndMostExpensiveUAV(array2);
 
 	}
 
@@ -71,9 +82,11 @@ public class Driver {
 		}
 
 		if (count != 0) {
-
+			// Creating array of UAV objects to store UAV object from Object[] array
 			UAV[] UAVs = new UAV[count];
 
+			// Checking which objects in the given array are of class UAV,
+			// If array[i] is UAV object then it is added to array UAVs
 			for (int i = 0, j = 0; i < array.length; i++) {
 				if (UAV.class == array[i].getClass()) {
 					UAVs[j] = (UAV) array[i];
@@ -83,11 +96,14 @@ public class Driver {
 
 			for (int i = 0; i < (UAVs.length - 1); i++) {
 
+				// Comparing UAV[i] with with UAV[i+1}; indexMax is equal to whichever is higher
 				if (UAVs[i].getPrice() >= UAVs[i + 1].getPrice()) {
 					indexMax = i;
 				} else {
 					indexMax = i + 1;
 				}
+				// Comparing UAV[i] with with UAV[i+1}; indexmin is equal to whichever is
+				// smaller
 				if (UAVs[i].getPrice() <= UAVs[i + 1].getPrice()) {
 					indexMin = i;
 				} else {
@@ -95,8 +111,10 @@ public class Driver {
 				}
 
 			}
-			System.out.println("The most expensive UAV is: " + UAVs[indexMax]);
-			System.out.println("The least expensive UAV is: " + UAVs[indexMin]);
+			// Printing toString of most and least expensive UAV
+			System.out.println("The most expensive UAV is: " + UAVs[indexMax].toString());
+			System.out.println("The least expensive UAV is: " + UAVs[indexMin].toString());
+
 		} else {
 			System.out.println("No UAVs present in given array.");
 			return;
