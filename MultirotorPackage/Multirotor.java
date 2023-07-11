@@ -2,12 +2,14 @@ package MultirotorPackage;
 
 import Helicopter_QuadcopterPackage.Helicopter;
 
-public class Multirotor extends Helicopter { //  that additionally has the following: number of rotors (int type), which indicates its number of rotors/blades that it has.  
-	
+public class Multirotor extends Helicopter { // that additionally has the following: number of rotors (int type), which
+												// indicates its number of rotors/blades that it has.
+
 	private int numberOfRotors;
-	
+
 	public Multirotor() {
 		super();
+		numberOfRotors = 6;
 	}
 
 	public Multirotor(String brand, double price, int horsepower, int numCylinders, int yearCreation,
@@ -40,7 +42,7 @@ public class Multirotor extends Helicopter { //  that additionally has the follo
 				+ " | Number of Cylinders: " + getCylinders() + " | Passenger Capacity: " + getPassengerCapacity()
 				+ " | Year of Creation: " + getCreationYear() + " | Number of rotors: " + numberOfRotors;
 	}
-	
+
 	public boolean equals(Object obj) {
 		if (this == obj)
 			return true;
@@ -48,13 +50,12 @@ public class Multirotor extends Helicopter { //  that additionally has the follo
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		
+
 		Multirotor other = (Multirotor) obj;
-		
+
 		return super.getCreationYear() == other.getCreationYear() && super.getCylinders() == other.getCylinders()
 				&& super.getPassengerCapacity() == other.getPassengerCapacity()
 				&& this.numberOfRotors == other.getNumberOfRotors();
 	}
-
 
 }
