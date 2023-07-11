@@ -42,7 +42,15 @@ public class MAV extends UAV { // a miniature UAV that has a size restriction (a
 				+ " pounds, and costs " + super.getPrice() + "$. It's size is " + size + "cubic centimeters.");
 	}
 	@Override
-	public boolean equals(MAV check) {
+	public boolean equals(Object obj) {
+		if (obj == null) {
+			return false;
+		} else if (obj.getClass() != getClass()) {
+			return false;
+		}
+		
+		MAV check = (MAV) obj;
+		
 		if (this.model == check.model && this.size == check.size && getWeight() == check.getWeight() && getPrice() == check.getPrice()) {
 			return true;
 		}
