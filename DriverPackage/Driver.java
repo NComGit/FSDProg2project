@@ -105,7 +105,7 @@ public class Driver {
 					uavMax = UAVs[i];
 				}
 
-				// Comparing UAV[i] with with uavMin; uavMin is equal to whichever is higher
+				// Comparing UAV[i] with with uavMin; uavMin is equal to whichever is lower
 				if (UAVs[i].getPrice() <= uavMin.getPrice()) {
 					uavMin = UAVs[i];
 				}
