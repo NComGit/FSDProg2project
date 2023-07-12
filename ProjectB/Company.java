@@ -97,9 +97,12 @@ public class Company {
 		System.out.println("Information read from file:");
 		while(sc.hasNextLine()) {
 			name = sc.next();
+			sc.next();
 			id = sc.nextInt();
 			month = sc.nextInt();
+			sc.next();
 			day = sc.nextInt();
+			sc.next();
 			year = sc.nextInt();
 			position = sc.next();
 						

@@ -48,7 +48,7 @@ public class Date {
 	
 	@Override
 	public String toString() {
-		return month + " " + day + " " + year;
+		return month + " / " + day + " / " + year;
 	}
 
 	private boolean dateOK(int month, int day, int year) {

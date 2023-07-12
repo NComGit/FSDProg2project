@@ -59,7 +59,7 @@ public class Employee {
 	@Override
 	public String toString() {
 		//return "Employee name: " + name + ", ID: " + id + ", Hired Date: " + hiredDate + ", Position: " + position;
-		return name + " " + id + " " + hiredDate + " " + position;
+		return name + " ID# " + id + " \t " + hiredDate + " " + position;
 	}
 	
 	
