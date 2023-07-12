@@ -1,7 +1,5 @@
 package MultirotorPackage;
 
-import java.util.Objects;
-
 import Helicopter_QuadcopterPackage.Helicopter;
 
 public class Multirotor extends Helicopter { // that additionally has the following: number of rotors (int type), which
@@ -59,8 +57,7 @@ public class Multirotor extends Helicopter { // that additionally has the follow
 
 		return super.getCreationYear() == other.getCreationYear() && super.getCylinders() == other.getCylinders()
 				&& super.getPassengerCapacity() == other.getPassengerCapacity()
-				&& this.numberOfRotors == other.getNumberOfRotors()
-				&& Objects.equals(super.getBrand(), other.getBrand());
+				&& this.numberOfRotors == other.getNumberOfRotors() && super.getBrand() == other.getBrand();
 	}
 
 }

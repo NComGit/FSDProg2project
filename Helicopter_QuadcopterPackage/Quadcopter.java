@@ -1,10 +1,7 @@
 package Helicopter_QuadcopterPackage;
 
-import java.util.Objects;
-
 public class Quadcopter extends Helicopter { // A Quadcopter, is a Helicopter that additionally has the following: max
 												// flying speed (int type), which indicates its maximum moving speed.
-
 	private int maxFlyingSpeed;
 
 	public Quadcopter() {
@@ -58,8 +55,7 @@ public class Quadcopter extends Helicopter { // A Quadcopter, is a Helicopter th
 
 		return super.getCreationYear() == other.getCreationYear() && super.getCylinders() == other.getCylinders()
 				&& super.getPassengerCapacity() == other.getPassengerCapacity()
-				&& this.maxFlyingSpeed == other.getMaxFlyingSpeed()
-				&& Objects.equals(super.getBrand(), other.getBrand());
+				&& this.maxFlyingSpeed == other.getMaxFlyingSpeed() && super.getBrand() == other.getBrand();
 	}
 
 }
