@@ -25,12 +25,7 @@ public class Multirotor extends Helicopter { // that additionally has the follow
 	public Multirotor(Multirotor multi) {
 		// Copy constructor; passes attributes of Multirotor multi(object to be copied)
 		// to superclass of Multirotor object to be created
-		super.setBrand(multi.getBrand());
-		super.setPrice(multi.getPrice());
-		super.setHorsePower(multi.getHorsePower());
-		super.setCylinders(multi.getCylinders());
-		super.setCreationYear(multi.getCreationYear());
-		super.setPassengerCapacity(multi.getPassengerCapacity());
+		super(multi);
 		this.numberOfRotors = multi.numberOfRotors;
 	}
 

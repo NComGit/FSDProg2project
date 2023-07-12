@@ -24,12 +24,7 @@ public class Quadcopter extends Helicopter { // A Quadcopter, is a Helicopter th
 	public Quadcopter(Quadcopter quad) {
 		// Copy constructor; passes attributes of Quadcopter quad(object to be copied)
 		// to superclass of Quadcopter object to be created
-		super.setBrand(quad.getBrand());
-		super.setPrice(quad.getPrice());
-		super.setHorsePower(quad.getHorsePower());
-		super.setCylinders(quad.getCylinders());
-		super.setCreationYear(quad.getCreationYear());
-		super.setPassengerCapacity(quad.getPassengerCapacity());
+		super(quad);
 		this.maxFlyingSpeed = quad.maxFlyingSpeed;
 	}
 
