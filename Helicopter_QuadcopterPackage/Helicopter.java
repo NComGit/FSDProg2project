@@ -62,9 +62,9 @@ public class Helicopter extends Airplane { //A Helicopter is an Airplane that ad
 
 	@Override
 	public String toString() {
-		return "Helicopter [cylinders=" + cylinders + ", creationYear=" + creationYear + ", passengerCapacity="
-				+ passengerCapacity + ", getBrand()=" + getBrand() + ", getPrice()=" + getPrice()
-				+ ", getHorsePower()=" + getHorsePower() + "]";
+		return "Helicopter Cylinders: " + cylinders + " | Creation Year: " + creationYear + " | Passenger Capacity: "
+				+ passengerCapacity + "|  Brand: " + getBrand() + " | Price: " + getPrice()
+				+ " | Horsepower: " + getHorsePower();
 	}
 
 	

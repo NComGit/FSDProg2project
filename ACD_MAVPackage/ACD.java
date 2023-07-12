@@ -43,8 +43,8 @@ public class ACD extends UAV { // (which is used for crop production) is UAV tha
 
 	@Override
 	public String toString() {
-		return ("This Agricultural Drone is manufactured by " + brand + ". It weighs " + super.getWeight()
-				+ " pounds, and costs " + super.getPrice() + "$. It can carry up to " + carryCap + "KG.");
+		return ("Brand:  " + brand + " | Weight: " + super.getWeight()
+				+ " lbs | Price:  " + super.getPrice() + "$ | Carry Capacity:  " + carryCap + "KG");
 	}
 
 	@Override

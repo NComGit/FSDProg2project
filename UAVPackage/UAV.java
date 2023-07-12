@@ -34,8 +34,8 @@ public class UAV { // (Unmanned aerial vehicle / Drone) class has the following 
 	}
 	
 	public String toString() {
-		return ("This Unmanned aerial vehicle weighs " + weight
-		+ " pounds, and costs " + price + "$.");
+		return ("Weight:  " + weight
+		+ " lbs | Price:  " + price + "$");
 }
 
 	public boolean equals(Object obj) {

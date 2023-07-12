@@ -38,8 +38,8 @@ public class MAV extends UAV { // a miniature UAV that has a size restriction (a
 	
 	@Override
 	public String toString() {
-		return ("This Micro Air Vehicle is a model " + model + ". It weighs " + super.getWeight()
-				+ " pounds, and costs " + super.getPrice() + "$. It's size is " + size + "cubic centimeters.");
+		return ("Model: " + model + " | Weight:  " + super.getWeight()
+				+ " lbs | Price: " + super.getPrice() + "$ | Size: " + size + " cubic centimeters");
 	}
 	@Override
 	public boolean equals(Object obj) {
