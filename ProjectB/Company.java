@@ -15,7 +15,7 @@ public class Company {
 	public static int id; 
 	public static Date hiredDate;
 	public static String position;
-	public static Employee[] arrayEmployees = new Employee[5] ;
+	public static Employee[] arrayEmployees = new Employee[30] ;
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -44,11 +44,14 @@ public class Company {
 	
 	//Write a method that returns all employees hired after a particular Date. 
 	public static void employeesHiredAfterDate(int m, int d, int y) {
-		Employee[] filteredEmployees = new Employee[5];
+		Employee[] filteredEmployees = new Employee[30];
 		int counter = 0;
 		boolean isAfterParticularDate = false;
 		
 		for (Employee e : arrayEmployees) {
+			if (e == null) {
+				System.exit(0);
+			}
 			if (e.hiredDate.getYear() >= y) {
 				if (e.hiredDate.getMonth() == m) {
 					if (e.hiredDate.getDay() > d) {
