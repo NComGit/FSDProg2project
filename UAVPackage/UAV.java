@@ -34,7 +34,7 @@ public class UAV { // (Unmanned aerial vehicle / Drone) class has the following 
 	}
 	
 	public String toString() {
-		return ("Weight:  " + weight
+		return ("UAV Weight:  " + weight
 		+ " lbs | Price:  " + price + "$");
 }
 

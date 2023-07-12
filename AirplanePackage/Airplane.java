@@ -61,9 +61,9 @@ public class Airplane { //An Airplane class, which has the following attributes:
 
 	@Override
 	public String toString() {
-		return "This airplane brand is " + brand 
-				+ ", it costs " + price 
-				+ "$, and horsepower is " + horsepower + ".";
+		return "Airplane Brand: " + brand 
+				+ " | Price: " + price 
+				+ "$ | Horsepower : " + horsepower;
 	}
 
 	
